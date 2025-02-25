@@ -1,0 +1,11 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<h1><%= @todo.title %></h1>
+<h2><%= @todo.description %></h2>
+<p>This is currently: <%= @todo.status %></p>
+
+<%= link_to 'Edit', edit_todo_path(@todo) %>
+<%= link_to 'Delete', @todo, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%= link_to 'Back to All Todos', todos_path %>
